@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransferViewController" customModule="Banking" customModuleProvider="target">
+            <connections>
+                <outlet property="amountPromptLabel" destination="UvP-fj-ScX" id="mLr-Lu-wm0"/>
+                <outlet property="amountTextField" destination="tv0-MU-ZT0" id="Znx-SX-hYL"/>
+                <outlet property="descriptionTextField" destination="7jc-e4-z6B" id="g08-25-cea"/>
+                <outlet property="selectedPayeeView" destination="G8V-qN-et0" id="IjD-hz-n8z"/>
+                <outlet property="transferNowButton" destination="yew-1f-s8s" id="1NV-hm-SaT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yew-1f-s8s" customClass="RectangleButton" customModule="Banking" customModuleProvider="target">
+                    <rect key="frame" x="16" y="798" width="382" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="RF0-hX-gPg"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="transferNowButtonAction:" destination="-1" eventType="touchUpInside" id="fl4-fZ-u6t"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8V-qN-et0" customClass="SelectedPayeeView" customModule="Banking" customModuleProvider="target">
+                    <rect key="frame" x="16" y="76" width="382" height="92"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="92" id="J34-BK-uoL"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tv0-MU-ZT0">
+                    <rect key="frame" x="16" y="184" width="382" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="PK3-dN-xET"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7jc-e4-z6B">
+                    <rect key="frame" x="16" y="274" width="382" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="e9p-A3-ngv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                </textField>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount is required!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvP-fj-ScX">
+                    <rect key="frame" x="16" y="240" width="382" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yew-1f-s8s" secondAttribute="trailing" constant="16" id="1Er-OJ-W5s"/>
+                <constraint firstItem="tv0-MU-ZT0" firstAttribute="top" secondItem="G8V-qN-et0" secondAttribute="bottom" constant="16" id="96u-Y5-l81"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yew-1f-s8s" secondAttribute="bottom" constant="16" id="Gml-uD-HRQ"/>
+                <constraint firstItem="7jc-e4-z6B" firstAttribute="trailing" secondItem="G8V-qN-et0" secondAttribute="trailing" id="GrL-4p-Bim"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G8V-qN-et0" secondAttribute="trailing" constant="16" id="H8y-yt-8Ke"/>
+                <constraint firstItem="UvP-fj-ScX" firstAttribute="trailing" secondItem="tv0-MU-ZT0" secondAttribute="trailing" id="Jdk-Zt-Vj4"/>
+                <constraint firstItem="tv0-MU-ZT0" firstAttribute="leading" secondItem="G8V-qN-et0" secondAttribute="leading" id="Ktj-LM-2t9"/>
+                <constraint firstItem="tv0-MU-ZT0" firstAttribute="trailing" secondItem="G8V-qN-et0" secondAttribute="trailing" id="N7E-Kc-wNc"/>
+                <constraint firstItem="G8V-qN-et0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="OYs-XZ-rNW"/>
+                <constraint firstItem="UvP-fj-ScX" firstAttribute="top" secondItem="tv0-MU-ZT0" secondAttribute="bottom" constant="8" id="a8H-Xc-9ha"/>
+                <constraint firstItem="7jc-e4-z6B" firstAttribute="leading" secondItem="G8V-qN-et0" secondAttribute="leading" id="emz-YB-gTN"/>
+                <constraint firstItem="UvP-fj-ScX" firstAttribute="leading" secondItem="tv0-MU-ZT0" secondAttribute="leading" id="guJ-s2-yl1"/>
+                <constraint firstItem="G8V-qN-et0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="k60-mC-zGg"/>
+                <constraint firstItem="7jc-e4-z6B" firstAttribute="top" secondItem="UvP-fj-ScX" secondAttribute="bottom" constant="16" id="pHl-lm-WXH"/>
+                <constraint firstItem="yew-1f-s8s" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pOK-xx-WOW"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="110"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
