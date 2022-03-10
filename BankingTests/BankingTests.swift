@@ -52,7 +52,19 @@ class BankingTests: XCTestCase {
         }
     }
     
-    func testLoginError() throws {
-        
+    func testLoginInavlidCredential() throws {
+        if let data = """
+        {
+            "status": "failed",
+            "error": "invalid login credential"
+        }
+        """.data(using: .utf8) {
+            let response = try JSONDecoder().decode(AuthenticationResponse.self, from: data)
+            XCTAssertEqual(response.status, "failed")
+            XCTAssertEqual(response.error, "invalid login credential")
+            XCTAssertNil(response.token)
+            XCTAssertNil(response.username)
+            XCTAssertNil(response.accountNo)
+        }
     }
 }
