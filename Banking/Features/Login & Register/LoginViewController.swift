@@ -116,13 +116,15 @@ class LoginViewController: UIViewController {
         } else if data.status == Status.failed.rawValue, let error = data.error {
             showAlert(title: "Login failed", message: error.firstUppercased)
         }
-        loginButton.stopLoading()
-        registerButton.stopLoading()
     }
     
     public func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Close", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Close", style: .default, handler: { _ in
+            self.loginButton.stopLoading()
+            self.registerButton.stopLoading()
+            
+        })
         alertController.addAction(action)
         present(alertController, animated: true, completion: nil)
     }

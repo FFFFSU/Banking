@@ -88,7 +88,9 @@ class TransferViewController: UIViewController {
                             self.present(alertController, animated: true, completion: nil)
                         } else if response.status == Status.failed.rawValue {
                             let alertController = UIAlertController(title: "Transfer failed!", message: response.error?.firstUppercased, preferredStyle: .alert)
-                            let action = UIAlertAction(title: "Close", style: .default, handler: nil)
+                            let action = UIAlertAction(title: "Close", style: .default, handler: { _ in
+                                self.transferNowButton.stopLoading()
+                            })
                             alertController.addAction(action)
                             self.present(alertController, animated: true, completion: nil)
                         }
@@ -97,7 +99,7 @@ class TransferViewController: UIViewController {
                     print(error)
                 }
             }
-            transferNowButton.stopLoading()
+            
         }
     }
     

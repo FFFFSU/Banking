@@ -33,6 +33,7 @@ class RectangleButton: UIButton {
     }
     
     public func configure(buttonType: RectangleButtonType) {
+        title = buttonType.getTitle()
         setTitle(buttonType.getTitle(), for: .normal)
         backgroundColor = buttonType.getBackgroundColor()
         tintColor = buttonType.getTintColor()
