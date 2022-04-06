@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Master update 2
         // Master update 3
         // Feature 1
+        // Feature 2
         return true
     }
 
