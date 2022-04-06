@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Recipient: Codable {
+struct Receipient: Codable {
     let accountNo: String
     let accountHolder: String
 }
@@ -18,7 +18,8 @@ struct TransactionData: Codable {
     let transactionDate: String
     let description: String?
     let transactionType: String
-    let receipient: Recipient
+    let receipient: Receipient?
+    let sender: Receipient?
 }
 
 struct Transaction: Codable {

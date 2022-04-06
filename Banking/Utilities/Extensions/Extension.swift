@@ -8,7 +8,7 @@
 import Foundation
 
 extension NSObject {
-    static var identifier: String {
+    class var identifier: String {
         return String(describing: self)
     }
 }
@@ -38,12 +38,6 @@ extension String {
     var iso8601withFractionalSeconds: Date { return Formatter.iso8601withFractionalSeconds.date(from: self)! }
 }
                     
-extension Sequence where Element: Hashable {
-    func uniqued() -> [Element] {
-        var set = Set<Element>()
-        return filter { set.insert($0).inserted }
-    }
-}
 
 extension Date {
     func removeTimeStamp() -> Date {

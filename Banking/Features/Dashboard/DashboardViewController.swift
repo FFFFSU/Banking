@@ -63,6 +63,7 @@ class DashboardViewController: UIViewController {
                 if balance.status == Status.success.rawValue, let balance = balance.balance {
                     DispatchQueue.main.async {
                         self.balance = balance
+                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
                     }
                 } else if balance.status == Status.failed.rawValue {
                     

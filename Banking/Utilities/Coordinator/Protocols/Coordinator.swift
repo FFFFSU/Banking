@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol Coordinator {
+@objc protocol Coordinator {
     var childCoordinators: [Coordinator] { get set }
     var navigationController: UINavigationController { get set }
     
-    func start()
+    @objc optional func start()
 }

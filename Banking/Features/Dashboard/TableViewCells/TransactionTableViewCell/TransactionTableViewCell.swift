@@ -21,7 +21,12 @@ class TransactionTableViewCell: UITableViewCell {
         let amount = String(format: "%.2f", transactionData.amount)
         amountLabel.text = transactionData.transactionType == "transfer" ? "- " + amount : amount
         amountLabel.textColor = transactionData.transactionType == "transfer" ? .secondaryLabel : .systemGreen
-        accountHolderLabel.text = transactionData.receipient.accountHolder
-        accountNoLabel.text = transactionData.receipient.accountNo
+        if transactionData.transactionType == "transfer" {
+            accountHolderLabel.text = transactionData.receipient?.accountHolder
+            accountNoLabel.text = transactionData.receipient?.accountNo
+        } else {
+            accountHolderLabel.text = transactionData.sender?.accountHolder
+            accountNoLabel.text = transactionData.sender?.accountNo
+        }
     }
 }

@@ -141,6 +141,8 @@ extension LoginViewController: UITextFieldDelegate {
             usernamePromptLabel.isHidden = true
         } else  if textField === passwordTextField {
             passwordPromptLabel.isHidden = true
+        } else if textField === confirmPasswordTextField {
+            confirmPasswordPromptLabel.isHidden = true
         }
         return true
     }
